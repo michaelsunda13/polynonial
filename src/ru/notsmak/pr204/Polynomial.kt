@@ -74,7 +74,7 @@ class Polynomial(coeff: Map<Int,Double> = mapOf(0 to 0.0)) {
         if (k == 0.0) {
             throw IllegalArgumentException()
         }
-        return Polynomial(_coeff.mapValues { (_, v) -> v / k })
+        return Polynomial(_coeff.map{(p,v) -> p to v/k}.toMap())
     }
 
     operator fun invoke(k: Double) : Double {
